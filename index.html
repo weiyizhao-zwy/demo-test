@@ -22,15 +22,6 @@ button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
 .toptabs button{padding:8px 16px;border-radius:10px;color:var(--sub);font-weight:500}
 .toptabs button.on{background:var(--p-bg);color:var(--p)}
 .toptabs button:disabled{opacity:.45;cursor:not-allowed}
-/* overview */
-.ov{margin:14px 24px 0;background:#fff;border:1px solid var(--line);border-radius:14px;padding:10px 18px;display:flex;align-items:center;gap:10px;flex:none;flex-wrap:wrap}
-.ov b{font-size:16px;margin-right:6px}
-.tag{padding:1px 10px;border-radius:12px;font-size:12px;font-weight:500}
-.t1{background:#ece8fd;color:#5b3fd6}.t2{background:#fff0e0;color:#c26100}.t3{background:#e2f6ea;color:#12804a}
-.ov p{margin:0;color:#444;flex:1;min-width:260px}
-.ov .more{color:var(--p);font-weight:600}
-.ovdetail{display:none;width:100%;margin-top:6px;padding-top:10px;border-top:1px dashed var(--line);color:#555;line-height:1.9}
-.ov.open .ovdetail{display:block}
 /* scene bar */
 .bar{margin:14px 24px 0;display:flex;align-items:center;gap:16px;flex:none;flex-wrap:wrap}
 .scenes{display:flex;gap:4px;background:#ebebf2;border-radius:12px;padding:4px}
@@ -67,21 +58,6 @@ iframe{border:0;background:#fff;transform-origin:0 0;position:absolute;left:0;to
   <div class="toptabs">
     <button class="on">① Seller Centre PC</button>
     <button disabled title="暂无设计稿">② Seller Centre App</button>
-  </div>
-</div>
-
-<div class="ov" id="ov">
-  <b>场景 × 入口总览</b>
-  <span class="tag t1">优化素材</span><span style="color:#bbb">·</span>
-  <span class="tag t2">选品</span><span style="color:#bbb">·</span>
-  <span class="tag t3">商品经营分析</span>
-  <p>Seller Center PC 上的 Migoo 入口方案：三条业务线 + 右侧助手（抽屉）的不同承接方式</p>
-  <button class="more" id="ovbtn">展开 ▾</button>
-  <div class="ovdetail">
-    <b>优化素材</b>：商品编辑页内的 AIGC 文本素材优化（标题推荐、描述改写、属性推荐）。<br>
-    <b>选品</b>：页面分为 Add New Product 与 Product Opportunities；Add New Product 内提供两个方案。<br>
-    <b>商品经营分析</b>：按 Seller Center 首页与 My Product 商品列表页场景分组，共 5 个方案画面。<br>
-    <b>右侧助手 · 抽屉</b>：Seller Assistant 与 Migoo 的承接方式，opt 1 区分入口，opt 2 一个入口、区分功能入口。
   </div>
 </div>
 
@@ -190,7 +166,6 @@ function step(d){
   si=next.si;pageIndex=next.pageIndex;pi=next.pi;
   go();
 }
-$('ovbtn').onclick = ()=>{ const o=$('ov').classList.toggle('open'); $('ovbtn').textContent = o?'收起 ▴':'展开 ▾' };
 $('zfit').onclick = ()=>{fit=true;$('zfit').classList.add('on');$('z100').classList.remove('on');layout()};
 $('z100').onclick = ()=>{fit=false;$('z100').classList.add('on');$('zfit').classList.remove('on');layout()};
 $('prev').onclick = ()=>step(-1); $('next').onclick = ()=>step(1);
